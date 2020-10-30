@@ -126,7 +126,7 @@
 ```yaml
   У сотрудника обязательно одно поле - числовое, одно — дата. 
 ```
-Под числовым я выбрал Salary Per Year, под датой DayOfBirth/
+Под числовым я выбрал Salary Per Hour, под датой DayOfBirth/
 
 # <a name="paragraph_7"></a>Пункт 7
 ```yaml
