@@ -1,0 +1,97 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+		 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <display-name>Archetype Created Web Application</display-name>
+
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <servlet-class>com.task.controllers.IndexController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
+        <servlet-name>create_department</servlet-name>
+        <servlet-class>com.task.controllers.departament.CreateDepartmentController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create_department</servlet-name>
+        <url-pattern>/create_department</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>departments</servlet-name>
+        <servlet-class>com.task.controllers.departament.DepartmentsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>departments</servlet-name>
+        <url-pattern>/departments</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>update_department</servlet-name>
+        <servlet-class>com.task.controllers.departament.UpdateDepartmentController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>update_department</servlet-name>
+        <url-pattern>/update_department</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>delete_department</servlet-name>
+        <servlet-class>com.task.controllers.departament.DeleteDepartmentController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete_department</servlet-name>
+        <url-pattern>/delete_department</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
+        <servlet-name>create_employee</servlet-name>
+        <servlet-class>com.task.controllers.employee.CreateEmployeeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create_employee</servlet-name>
+        <url-pattern>/create_employee</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>view_employee</servlet-name>
+        <servlet-class>com.task.controllers.departament.ViewDepartmentEmployeesController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>view_employee</servlet-name>
+        <url-pattern>/view_employee</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>update_employee</servlet-name>
+        <servlet-class>com.task.controllers.employee.UpdateEmployeeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>update_employee</servlet-name>
+        <url-pattern>/update_employee</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>delete_employee</servlet-name>
+        <servlet-class>com.task.controllers.employee.DeleteEmployeeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete_employee</servlet-name>
+        <url-pattern>/delete_employee</url-pattern>
+    </servlet-mapping>
+
+</web-app>

@@ -1,0 +1,29 @@
+body {
+    background: url("https://wallpaperstream.com/wallpapers/full/skyline/Glass-Office-Buildings-in-Modern-City.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+h4 {
+    color: red;
+    font-family: "Arial Narrow", serif;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Arial Narrow", monospace
+}
+
+td {
+    font-family: "Arial Narrow", serif;
+}
+
+a {
+    font-family: "Arial Narrow", serif;
+}
+
+tr {
+    font-family: "Arial Narrow", serif;
+}
