@@ -31,6 +31,7 @@
 Первые две предсталяют собой обычные модели, третья содержит в себе только ID (PRIMARY KEY) сотрудников и департаментов.
 
 (смотреть) [database_initialization.sql](src/main/resourses/sql/database_initialization.sql)
+
 ![Header Image](src/main/resourses/screens/databaseSchema.jpg)
 
 
@@ -125,7 +126,7 @@
 ```yaml
   У сотрудника обязательно одно поле - числовое, одно — дата. 
 ```
-Под числовым я выбрал Salary Per Year, под датой DayOfBirth/
+Под числовым я выбрал Salary Per Hour, под датой DayOfBirth
 
 # <a name="paragraph_7"></a>Пункт 7
 ```yaml
@@ -133,14 +134,14 @@
 ```
 Для этой задачи я создал дополнительные две сущности [DepartmentDataInputListener](src/main/java/com/task/dao/dataInput/impl/DepartmentDataInputListenerImpl.java) и [EmployeeDataInputListener](src/main/java/com/task/dao/dataInput/impl/EmployeeDataInputListenerImpl.java)
 
-Последнее слово намекает на паттерны, который я якобы применил для этой задачи).
+Последнее слово намекает на паттерн, который я якобы применил для этой задачи).
 
 ```yaml
   Как они работают ?
 ```
 Обе сущиности имееют те же самые поля, которые имеют их ... как бы это написать сущьности к которым они представлены.
 
-По мимо аналогичных полей с базовыми сущьностями они имеют :
+По мимо аналогичных полей с базовыми сущностями они имеют :
 
 ```yaml
   is_validation_failed        TINYINT (boolean) тип, который содержит 0 (false) в случае, если попытка валидации прошла успешно и 1 (true) если валидации не прошла
