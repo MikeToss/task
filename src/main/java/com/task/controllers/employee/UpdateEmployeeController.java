@@ -86,40 +86,30 @@ public class UpdateEmployeeController extends HttpServlet {
         String email = req.getParameter("email").trim();
         String salaryPerHour = req.getParameter("salaryPerHour").trim();
         String dateOfBirth = req.getParameter("dateOfBirth");
-
         try {
             Employee employee = employeeJDBC.getById(EMPLOYEE_ID).orElseThrow(() ->
                     new DataProcessingException(EXCEPTION_COULD_NOT_GET_EMPLOYEE_BY_ID_FROM_DATABASE,
                             new SQLException()));
-
             if (!email.isEmpty()) {
                 for (Employee currentEmployee : employeeJDBC.getAll()) {
                     isEmployeeWithSimilarEmailIsAlreadyExists = email.trim().equalsIgnoreCase(currentEmployee.getEmail());
                     if (isEmployeeWithSimilarEmailIsAlreadyExists) break;
                 }
             }
+            if (!firstName.isEmpty())
+                isFirstNameLengthInvalid = !(firstName.length() >= 2 && firstName.length() <= 30 && !Helper.stringHasDigits(firstName));
 
-            if (!firstName.isEmpty()) {
-                isFirstNameLengthInvalid = !(firstName.length() >= 2 && firstName.length() <= 30
-                        && !Helper.stringHasDigits(firstName));
-            }
-            if (!lastName.isEmpty()) {
-                isLastNameLengthInvalid = !(lastName.length() >= 2 && lastName.length() <= 30
-                        && !Helper.stringHasDigits(lastName));
-            }
-
+            if (!lastName.isEmpty())
+                isLastNameLengthInvalid = !(lastName.length() >= 2 && lastName.length() <= 30 && !Helper.stringHasDigits(lastName));
             if (!email.isEmpty()) isEmail = Helper.isEmail(email);
 
             if (salaryPerHour.isEmpty()) isSalary = true;
             else isSalary = !Helper.stringHasLetters(salaryPerHour);
 
-            if (!dateOfBirth.isEmpty())
-                isAnAdult = Helper.getTimeLength(LocalDate.parse(dateOfBirth), ChronoUnit.YEARS) >= 18;
-
+            if (!dateOfBirth.isEmpty()) isAnAdult = Helper.getTimeLength(LocalDate.parse(dateOfBirth), ChronoUnit.YEARS) >= 18;
             EmployeeValidation.validate(req, resp, employeeDataInputListener, URL, firstName, lastName, email,
                     salaryPerHour, dateOfBirth, isEmployeeWithSimilarEmailIsAlreadyExists, isFirstNameLengthInvalid,
                     isLastNameLengthInvalid, isSalary, isEmail, isAnAdult, UPDATE_CONTROLLER);
-
             if (!isEmployeeWithSimilarEmailIsAlreadyExists && !isFirstNameLengthInvalid && !isLastNameLengthInvalid &&
                     isEmail && isSalary && isAnAdult) {
 
