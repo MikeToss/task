@@ -31,6 +31,7 @@
 Первые две предсталяют собой обычные модели, третья содержит в себе только ID (PRIMARY KEY) сотрудников и департаментов.
 
 (смотреть) [database_initialization.sql](src/main/resourses/sql/database_initialization.sql)
+
 ![Header Image](src/main/resourses/screens/databaseSchema.jpg)
 
 
