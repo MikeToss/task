@@ -126,7 +126,7 @@
 ```yaml
   У сотрудника обязательно одно поле - числовое, одно — дата. 
 ```
-Под числовым я выбрал Salary Per Hour, под датой DayOfBirth/
+Под числовым я выбрал Salary Per Hour, под датой DayOfBirth
 
 # <a name="paragraph_7"></a>Пункт 7
 ```yaml
@@ -134,7 +134,7 @@
 ```
 Для этой задачи я создал дополнительные две сущности [DepartmentDataInputListener](src/main/java/com/task/dao/dataInput/impl/DepartmentDataInputListenerImpl.java) и [EmployeeDataInputListener](src/main/java/com/task/dao/dataInput/impl/EmployeeDataInputListenerImpl.java)
 
-Последнее слово намекает на паттерны, который я якобы применил для этой задачи).
+Последнее слово намекает на паттерн, который я якобы применил для этой задачи).
 
 ```yaml
   Как они работают ?
