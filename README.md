@@ -132,7 +132,7 @@
 ```yaml
   Данные после валидации пропадать не должны, даже если они введены неправильно. 
 ```
-Для этой задачи я создал дополнительные две сущности [DepartmentDataInputListener](src/main/java/com/task/dao/dataInput/impl/DepartmentDataInputListenerImpl.java) и [EmployeeDataInputListener](src/main/java/com/task/dao/dataInput/impl/EmployeeDataInputListenerImpl.java)
+Для этой задачи я создал дополнительные две сущности [DepartmentDataInputListener](src/main/java/com/task/model/dataInput/DepartmentDataInputListener.java) и [EmployeeDataInputListener](src/main/java/com/task/model/dataInput/EmployeeDataInputListener.java)
 
 Последнее слово намекает на паттерн, который я якобы применил для этой задачи).
 
