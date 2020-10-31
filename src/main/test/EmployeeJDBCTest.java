@@ -49,7 +49,8 @@ public class EmployeeJDBCTest {
         // We will get a created employee from  from test_task_db.employee which was create in A_createEmployeeTest()
 
         Employee testEmployeeById = employeeJDBC.getById(TEST_EMPLOYEE_ID)
-                .orElseThrow(() -> new DataProcessingException(EXCEPTION_COULD_NOT_GET_EMPLOYEE_BY_ID_FROM_DATABASE, new SQLException()));
+                .orElseThrow(() -> new DataProcessingException(EXCEPTION_COULD_NOT_GET_EMPLOYEE_BY_ID_FROM_DATABASE,
+                        new SQLException()));
 
         assertEquals("Brock", testEmployeeById.getFirstName());
         assertEquals("Lesnar", testEmployeeById.getLastName());
@@ -60,7 +61,6 @@ public class EmployeeJDBCTest {
 
     @Test
     public void E_deleteEmployeeTest() {
-
         assertTrue(employeeJDBC.getAll().stream().anyMatch(employee -> TEST_EMPLOYEE_EMAIL.equals(employee.getEmail())));
 
         employeeJDBC.delete(TEST_EMPLOYEE_ID);
