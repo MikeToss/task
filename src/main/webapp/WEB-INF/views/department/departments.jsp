@@ -24,7 +24,9 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="${pageContext.request.contextPath}/create_department">Create new Department<span
+                <a class="nav-link" href="${pageContext.request.contextPath}/create_department"
+                   style="color:black; font-family: 'Arial Black',serif; font-size: 30px">CREATE
+                    NEW DEPARTMENT<span
                             class="sr-only">(current)</span></a>
             </li>
         </ul>

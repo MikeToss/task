@@ -28,11 +28,13 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="${pageContext.request.contextPath}/departments">Back to Departments<span
+                <a class="nav-link" href="${pageContext.request.contextPath}/departments" style="font-size: 30px">Back to Departments<span
                         class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="${pageContext.request.contextPath}/create_employee">Create new Employee<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/create_employee"
+                   style="color:black; font-family: 'Arial Black',serif; font-size: 30px">CREATE NEW EMPLOYEE<span
+                        class="sr-only">(current)</span></a>
             </li>
         </ul>
     </div>

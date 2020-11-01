@@ -25,6 +25,28 @@ class EmployeeValidation {
                          boolean isFirstNameLengthInvalid, boolean isLastNameLengthInvalid,
                          boolean isSalary, boolean isEmail, boolean isAnAdult, String controllerOFListener) throws ServletException, IOException {
 
+
+        if (isFirstNameLengthInvalid) {
+            req.setAttribute("firstNameLengthBeyond30CharactersOrHasDigitsMessage",
+                    FIRST_NAME_LENGTH_LESS_2_CHARACTERS_OR_BEYOND_30_CHARACTERS_OR_HAS_DIGITS);
+            employeeDataInputListener.add(new EmployeeDataInputListener(firstName, lastName, email,
+                    salaryPerHour, dateOfBirth, true,
+                    FIRST_NAME_LENGTH_LESS_2_CHARACTERS_OR_BEYOND_30_CHARACTERS_OR_HAS_DIGITS, controllerOFListener,
+                    LocalDate.now(), LocalTime.now()));
+            req.getRequestDispatcher(URL).forward(req, resp);
+        }
+
+
+        if (isLastNameLengthInvalid) {
+            req.setAttribute("lastNameLengthBeyond30CharactersOrHasDigitsMessage",
+                    LAST_NAME_LENGTH_LESS_2_CHARACTERS_OR_BEYOND_30_CHARACTERS_OR_HAS_DIGITS);
+            employeeDataInputListener.add(new EmployeeDataInputListener(firstName, lastName, email,
+                    salaryPerHour, dateOfBirth, true,
+                    LAST_NAME_LENGTH_LESS_2_CHARACTERS_OR_BEYOND_30_CHARACTERS_OR_HAS_DIGITS, controllerOFListener,
+                    LocalDate.now(), LocalTime.now()));
+            req.getRequestDispatcher(URL).forward(req, resp);
+        }
+
         if (!isEmail) {
             req.setAttribute("invalidEmailMessage", INVALID_EMAIL);
             employeeDataInputListener.add(new EmployeeDataInputListener(firstName, lastName, email, salaryPerHour,
@@ -39,26 +61,6 @@ class EmployeeValidation {
             employeeDataInputListener.add(new EmployeeDataInputListener(firstName, lastName, email, salaryPerHour,
                     dateOfBirth, true, EMPLOYEE_WITH_SIMILAR_EMAIL_IS_ALREADY_EXISTS,
                     controllerOFListener, LocalDate.now(), LocalTime.now()));
-            req.getRequestDispatcher(URL).forward(req, resp);
-        }
-
-        if (isFirstNameLengthInvalid) {
-            req.setAttribute("firstNameLengthBeyond30CharactersOrHasDigitsMessage",
-                    FIRST_NAME_LENGTH_LESS_2_CHARACTERS_OR_BEYOND_30_CHARACTERS_OR_HAS_DIGITS);
-            employeeDataInputListener.add(new EmployeeDataInputListener(firstName, lastName, email,
-                    salaryPerHour, dateOfBirth, true,
-                    FIRST_NAME_LENGTH_LESS_2_CHARACTERS_OR_BEYOND_30_CHARACTERS_OR_HAS_DIGITS, controllerOFListener,
-                    LocalDate.now(), LocalTime.now()));
-            req.getRequestDispatcher(URL).forward(req, resp);
-        }
-
-        if (isLastNameLengthInvalid) {
-            req.setAttribute("lastNameLengthBeyond30CharactersOrHasDigitsMessage",
-                    LAST_NAME_LENGTH_LESS_2_CHARACTERS_OR_BEYOND_30_CHARACTERS_OR_HAS_DIGITS);
-            employeeDataInputListener.add(new EmployeeDataInputListener(firstName, lastName, email,
-                    salaryPerHour, dateOfBirth, true,
-                    LAST_NAME_LENGTH_LESS_2_CHARACTERS_OR_BEYOND_30_CHARACTERS_OR_HAS_DIGITS, controllerOFListener,
-                    LocalDate.now(), LocalTime.now()));
             req.getRequestDispatcher(URL).forward(req, resp);
         }
 
