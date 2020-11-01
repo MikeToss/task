@@ -24,8 +24,6 @@ class EmployeeValidation {
                          String dateOfBirth, boolean isEmployeeWithSimilarEmailIsAlreadyExists,
                          boolean isFirstNameLengthInvalid, boolean isLastNameLengthInvalid,
                          boolean isSalary, boolean isEmail, boolean isAnAdult, String controllerOFListener) throws ServletException, IOException {
-
-
         if (isFirstNameLengthInvalid) {
             req.setAttribute("firstNameLengthBeyond30CharactersOrHasDigitsMessage",
                     FIRST_NAME_LENGTH_LESS_2_CHARACTERS_OR_BEYOND_30_CHARACTERS_OR_HAS_DIGITS);
@@ -35,8 +33,6 @@ class EmployeeValidation {
                     LocalDate.now(), LocalTime.now()));
             req.getRequestDispatcher(URL).forward(req, resp);
         }
-
-
         if (isLastNameLengthInvalid) {
             req.setAttribute("lastNameLengthBeyond30CharactersOrHasDigitsMessage",
                     LAST_NAME_LENGTH_LESS_2_CHARACTERS_OR_BEYOND_30_CHARACTERS_OR_HAS_DIGITS);
@@ -46,7 +42,6 @@ class EmployeeValidation {
                     LocalDate.now(), LocalTime.now()));
             req.getRequestDispatcher(URL).forward(req, resp);
         }
-
         if (!isEmail) {
             req.setAttribute("invalidEmailMessage", INVALID_EMAIL);
             employeeDataInputListener.add(new EmployeeDataInputListener(firstName, lastName, email, salaryPerHour,
@@ -54,7 +49,6 @@ class EmployeeValidation {
                     LocalTime.now()));
             req.getRequestDispatcher(URL).forward(req, resp);
         }
-
         if (isEmployeeWithSimilarEmailIsAlreadyExists) {
             req.setAttribute("employeeWithSimilarEmailIsAlreadyExistsMessage",
                     EMPLOYEE_WITH_SIMILAR_EMAIL_IS_ALREADY_EXISTS);
@@ -63,7 +57,6 @@ class EmployeeValidation {
                     controllerOFListener, LocalDate.now(), LocalTime.now()));
             req.getRequestDispatcher(URL).forward(req, resp);
         }
-
         if (!isSalary) {
             req.setAttribute("onlyNumericValuesAreAllowedInSalaryPerHourField", ONLY_NUMERIC_VALUES_ARE_ALLOWED_IN_SALARY_PER_HOUR_FIELD);
             employeeDataInputListener.add(new EmployeeDataInputListener(firstName, lastName, email,
@@ -72,7 +65,6 @@ class EmployeeValidation {
                     LocalTime.now()));
             req.getRequestDispatcher(URL).forward(req, resp);
         }
-
         if (!isAnAdult) {
             req.setAttribute("employeeIsNotAdult", EMPLOYEE_IS_NOT_ADULT);
             employeeDataInputListener.add(new EmployeeDataInputListener(firstName, lastName, email,
